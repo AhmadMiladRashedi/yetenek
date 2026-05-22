@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yetenek Takası - Beceri Değişimi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h2>Yetenek Takası</h2>
+            </div>
+            <ul class="menu">
+                <li><a href="#">Ana Sayfa</a></li>
+                <li><a href="nasil-calisir.html">Nasıl Çalışır?</a></li>
+                <li><a href="beceri-ara.php">Beceri Ara</a></li>
+                <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                <li><a href="login.html" class="btn-login">Giriş Yap</a></li>
+                <li><a href="register.html">Ücretsiz Kayıt Ol</a></li>
+   
+    <
+</a></li>
+             
+                
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+     <section class="hero">
+    <canvas id="galaxy"></canvas>
+
+    <div class="container">
+        <div class="hero-content">
+            <h1>Beceri Takas Et, <span>Yeni Şeyler Öğren</span></h1>
+            <p>Para yerine bilgi ve yetenek değişimi yap.</p>
+            <div class="hero-buttons">
+                <a href="register.html" class="btn btn-primary">Hemen Başla</a>
+                <a href="nasil-calisir.html" class="btn btn-secondary">Nasıl Çalışır?</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Özellikler -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Neden Yetenek Takası?</h2>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="zoom-in"><
+                    <i class="fas fa-exchange-alt"></i>
+                    <h3>Beceri Takası</h3>
+                    <p>Öğretebileceğin becerileri ekle, öğrenmek istediklerini belirt. Sistem sana uygun eşleşmeler sunsun.</p>
+                </div>
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200" >
+                 <i class="fas fa-users"></i>
+                    <h3>Gerçek İnsanlar</h3>
+                    <p>Üniversite öğrencileri, profesyoneller ve hobi sahipleriyle doğrudan bağlantı kur.</p>
+                </div>
+                <div class="feature-card"  data-aos="zoom-in" data-aos-delay="400>
+                    <i class="fas fa-comments"></i>
+                    <h3>Mesajlaşma</h3>
+                    <p>Eşleştiğin kişilerle güvenli mesajlaşma sistemi.</p>
+                </div>
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="600">
+                    <i class="fas fa-star"></i>
+                    <h3>Değerlendirme</h3>
+                    <p>Takas sonrası puan ver, yorum bırak. Güvenilir topluluk oluştur.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nasıl Çalışır -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Nasıl Çalışır?</h2>
+            <div class="steps" data-aos="fade-right">
+                <div class="step">
+                    <span>1</span>
+                    <h3>Kayıt Ol</h3>
+                    <p>Ücretsiz üye ol ve profilini oluştur.</p>
+                </div>
+                <div class="step"data-aos="fade-up">
+                    <span>2</span>
+                    <h3>Becerilerini Ekle</h3>
+                    <p>Öğretebileceğin ve öğrenmek istediğin becerileri belirle.</p>
+                </div>
+                <div class="step" data-aos="fade-left">
+                    <span>3</span>
+                    <h3>Eşleş ve Takas Et</h3>
+                    <p>Önerilen kişilerle takas isteği gönder ve anlaş.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Yetenek Takası - Bartın Üniversitesi Bilgisayar Mühendisliği</p>
+            <p>Ahmad Milad Rashedi & Ahmad Ferdaws Akbari</p>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({
+  duration: 1000,
+  once: true
+});
+</script>
+</body>
+
+<script>
+const canvas = document.getElementById("galaxy");
+const ctx = canvas.getContext("2d");
+
+canvas.width = canvas.offsetWidth;
+canvas.height = canvas.offsetHeight;
+
+let stars = [];
+
+// ساخت ستاره‌ها
+for (let i = 0; i < 300; i++) {
+    stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 1.5,
+        speed: Math.random() * 0.5
+    });
+}
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    stars.forEach(star => {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fillStyle = "white";
+        ctx.fill();
+
+        star.y += star.speed;
+
+        if (star.y > canvas.height) {
+            star.y = 0;
+            star.x = Math.random() * canvas.width;
+        }
+    });
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+// ریسپانسیو
+window.addEventListener("resize", () => {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+});
+</script>
+</html>

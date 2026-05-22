@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol - Yetenek Takası</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h2>Yetenek Takası</h2>
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="nasil-calisir.html">Nasıl Çalışır?</a></li>
+                <li><a href="login.html">Giriş Yap</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="auth-page">
+        <div class="auth-container">
+            <h2>Yeni Hesap Oluştur</h2>
+            <p>Yeteneklerini paylaşmaya hemen başla</p>
+<form action="register.php" method="POST" class="auth-form">
+    <div class="form-row">
+        <input type="text" name="ad" placeholder="Ad" required>
+        <input type="text" name="soyad" placeholder="Soyad" required>
+    </div>
+    <input type="email" name="email" placeholder="E-posta adresi" required>
+    <input type="text" name="kullanici_adi" placeholder="Kullanıcı adı" required>
+    <input type="password" name="sifre" placeholder="Şifre" required>
+    <input type="password" name="sifre_tekrar" placeholder="Şifreyi Tekrarla" required>
+
+    <button type="submit" class="btn btn-primary full-width">Kayıt Ol</button>
+</form>
+
+            <p class="switch-auth">
+                Zaten hesabın var mı? <a href="login.html">Giriş Yap</a>
+            </p>
+        </div>
+    </section>
+</body>
+</html>
